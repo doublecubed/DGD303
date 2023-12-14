@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 _input;  // 0,1
 
-    private bool _canGetInput;
+    [SerializeField] private bool _canGetInput;
 
     #endregion
 
