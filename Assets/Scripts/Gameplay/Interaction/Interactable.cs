@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+namespace DGD303.Interaction
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Interactable : MonoBehaviour
     {
-        
-    }
+        #region REFERENCES
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private Player _player;
+
+        #endregion
+
+        #region MONOBEHAVIOUR
+
+        private void Start()
+        {
+            _player = FindObjectOfType<Player>();
+        }
+
+        #endregion
+
+        public void Interact()
+        {
+            _player.playerHealth += 50;
+            Debug.Log("Thank you for interacting with me");
+        }
     }
 }
