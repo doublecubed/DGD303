@@ -3,6 +3,7 @@ using DGD303.Interaction;
 
 public class HealthGiver : MonoBehaviour, IInteractable
 {
+    public float healthValue;
     private Player _player;
 
     private void Start()
@@ -13,6 +14,6 @@ public class HealthGiver : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        _player.playerHealth += 100f;
+        _player.UpdateHealth(healthValue);
     }
 }

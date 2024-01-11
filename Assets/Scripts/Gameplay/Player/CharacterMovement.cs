@@ -5,7 +5,7 @@ public class CharacterMovement : MonoBehaviour
     #region REFERENCES
 
     private Rigidbody _rigidbody;
-    private Animator _animator;
+    private CharacterAnimator _animator;
 
     #endregion
 
@@ -26,7 +26,7 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponentInChildren<Animator>();
+        _animator = GetComponent<CharacterAnimator>();
     }
 
     private void Start()
@@ -76,13 +76,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!_canGetInput) return;
 
-        _animator.SetBool("walking", _input.y != 0);
-        _animator.SetFloat("walkDirection", _input.y > 0 ? 1f : -1f);
+        _animator.Walk(_input.y);
     }
 
     private void Die()
     {
-        _animator.SetTrigger("die");
+        _animator.Die();
         _canGetInput = false;
         _input = Vector2.zero;
     }

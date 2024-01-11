@@ -3,6 +3,8 @@ using DGD303.Interaction;
 
 public class EnergyGiver : MonoBehaviour, IInteractable 
 {
+    public float energyValue;
+
     private Player _player;
 
     private void Start()
@@ -13,6 +15,6 @@ public class EnergyGiver : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        _player.playerEnergy += 100f;
+        _player.UpdateEnergy(energyValue);
     }
 }

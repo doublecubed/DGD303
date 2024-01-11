@@ -838,7 +838,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 300}
-  m_SizeDelta: {x: 750, y: 120}
+  m_SizeDelta: {x: 900, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &956711719
 GameObject:
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BALDGUY'S QUEST
+  m_text: BALLAD OF THE BALD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dec4d650ebe377c4d92598689f29b2e0, type: 2}
   m_sharedMaterial: {fileID: -6005121910502902830, guid: dec4d650ebe377c4d92598689f29b2e0, type: 2}
