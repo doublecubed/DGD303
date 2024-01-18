@@ -6,9 +6,18 @@ public class CharacterCombat : MonoBehaviour
 {
     #region REFERENCES
 
+    public GameObject projectilePrefab;
+
     private CharacterAnimator _animator;
 
     #endregion
+
+    #region VARIABLES
+
+    public float projectileLaunchDelay;
+
+    #endregion
+
 
     #region MONOBEHAVIOUR
 
@@ -22,8 +31,21 @@ public class CharacterCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _animator.Throw();
+            Invoke("Throw", projectileLaunchDelay);
         }
     }
+
+    #endregion
+
+    #region METHODS
+
+    private void Throw()
+    {
+        Vector3 exitPosition = transform.position + Vector3.up * 1.5f;
+
+        GameObject projectile = Instantiate(projectilePrefab, exitPosition,  transform.rotation);
+    }
+
 
     #endregion
 }
